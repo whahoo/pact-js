@@ -67,7 +67,7 @@ module.exports = ({consumer, provider, port = 1234}) => {
     },
     
       sendInteractions: () => {
-          return Mockservice.putInteractions(interactions)
+          return mockService.putInteractions(interactions)
       }
 
       finalisePact: () => {
