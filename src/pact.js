@@ -65,15 +65,16 @@ module.exports = ({consumer, provider, port = 1234}) => {
       interactions.push(interaction)
       return interaction
     },
-    
-      sendInteractions: () => {
-          return mockService.putInteractions(interactions)
-      }
 
-      finalisePact: () => {
-          return mockService.verifyAndWrite()
-              .then(() => mockService.removeInteractions())
-      }
+    sendInteractions: () => {
+      return mockService.putInteractions(interactions)
+    },
+
+    finalisePact: () => {
+      return mockService.verifyAndWrite()
+        .then(() => mockService.removeInteractions())
+    },
+
     /**
      * Executes a promise chain that will eventually write the Pact file if successful.
      * @param {Function} integrationFn - the function that triggers a HTTP request to the provider
